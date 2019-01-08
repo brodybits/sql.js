@@ -195,6 +195,14 @@ See : https://github.com/kripken/sql.js/blob/master/test/test_worker.js
  - You can find a non minified or optimized version for debugging, `sql-debug.js` here : https://raw.githubusercontent.com/kripken/sql.js/master/js/sql-debug.js
  - If you see the message, `Cannot enlarge memory arrays`, try this version, `sql-memory-growth.js` here : https://raw.githubusercontent.com/kripken/sql.js/master/js/sql-memory-growth.js
 
+## Build notes
+
+The following build command worked for me:
+
+```sh
+LLVM=/usr/local/homebrew/Cellar/emscripten/1.38.21/libexec/llvm/bin make
+```
+
 ## Related
 
 * [In-Browser/Client-Side Demo](http://kripken.github.io/sql.js/GUI/)
