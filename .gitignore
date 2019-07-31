@@ -8,5 +8,4 @@ c/*.bc
 js/api.js
 js/*.js.map
 js/sql-optimized.js
-js/worker.js
 js/sql-raw.js.map
