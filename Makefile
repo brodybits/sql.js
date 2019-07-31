@@ -45,6 +45,6 @@ module.tar.gz: test package.json AUTHORS README.md js/sql.js
 	tar --create --gzip $^ > $@
 
 clean:
-	rm -rf js/sql.js js/api.js js/sql*-raw.js js/worker.sql.js js/worker.js js/sql-memory-growth.js c/sqlite3.bc c/extension-functions.bc
+	rm -rf js/api.js js/sql*.js js/worker*.js c/*.bc
 
 
