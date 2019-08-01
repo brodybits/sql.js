@@ -20,8 +20,8 @@ js/sql.js: optimized
 js/sql%.js: js/shell-pre.js js/sql%-raw.js js/shell-post.js
 	cat $^ > $@
 
-js/sql%-raw.js: c/sqlite3.bc c/extension-functions.bc js/api.js exported_functions
-	$(EMCC) $(EMFLAGS) -s EXPORTED_FUNCTIONS=@exported_functions -s EXTRA_EXPORTED_RUNTIME_METHODS=@exported_runtime_methods c/extension-functions.bc c/sqlite3.bc --post-js js/api.js -o $@ ;\
+js/sql%-raw.js: c/sqlite3.bc c/extension-functions.bc c/custom_db_extensions.bc js/api.js exported_functions
+	$(EMCC) $(EMFLAGS) -s EXPORTED_FUNCTIONS=@exported_functions -s EXTRA_EXPORTED_RUNTIME_METHODS=@exported_runtime_methods c/extension-functions.bc c/custom_db_extensions.bc c/sqlite3.bc --post-js js/api.js -o $@ ;\
 
 js/api.js: coffee/api.coffee coffee/exports.coffee coffee/api-data.coffee
 	cat $^ | coffee --bare --compile --stdio > $@
@@ -32,6 +32,9 @@ c/sqlite3.bc: c/sqlite3.c
 
 c/extension-functions.bc: c/extension-functions.c
 	$(EMCC) $(CFLAGS) -s LINKABLE=1 c/extension-functions.c -o c/extension-functions.bc
+
+c/custom_db_extensions.bc: c/custom_db_extensions.c
+	$(EMCC) $(CFLAGS) -s LINKABLE=1 c/custom_db_extensions.c -o c/custom_db_extensions.bc
 
 module.tar.gz: test package.json AUTHORS README.md js/sql.js
 	tar --create --gzip $^ > $@

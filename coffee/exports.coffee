@@ -1,3 +1,4 @@
+open_c_database = Module['cwrap'] 'open_c_database', 'number', ['string', 'number']
 sqlite3_open = Module['cwrap'] 'sqlite3_open', 'number', ['string', 'number']
 sqlite3_close_v2 = Module['cwrap'] 'sqlite3_close_v2', 'number', ['number']
 sqlite3_exec = Module['cwrap'] 'sqlite3_exec', 'number', ['number', 'string', 'number', 'number', 'number']
@@ -54,6 +55,9 @@ sqlite3_result_double = Module['cwrap'] 'sqlite3_result_double', '', ['number', 
 sqlite3_result_null = Module['cwrap'] 'sqlite3_result_null', '', ['number']
 sqlite3_result_text = Module['cwrap'] 'sqlite3_result_text', '', ['number', 'string', 'number', 'number']
 RegisterExtensionFunctions = Module['cwrap'] 'RegisterExtensionFunctions', 'number', ['number']
+
+## Support custom db extensions
+custom_db_extensions = Module['cwrap'] 'custom_db_extensions', 'number', ['number']
 
 # Export the API
 this['SQL'] = {'Database':Database}
