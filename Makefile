@@ -171,7 +171,7 @@ out/extension-functions.bc: sqlite-src/$(SQLITE_AMALGAMATION)/$(EXTENSION_FUNCTI
 
 out/custom_db_extensions.bc: c/custom_db_extensions.c
 	mkdir -p out
-	$(EMCC) $(CFLAGS) -s LINKABLE=1 $^ -o $@
+	$(EMCC) $(CFLAGS) -Isqlite-src/$(SQLITE_AMALGAMATION) -s LINKABLE=1 $^ -o $@
 
 # TODO: This target appears to be unused. If we re-instatate it, we'll need to add more files inside of the JS folder
 # module.tar.gz: test package.json AUTHORS README.md dist/sql-asm.js
