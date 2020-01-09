@@ -75,16 +75,19 @@ all: optimized debug worker
 debug: dist/sql-asm-debug.js dist/sql-wasm-debug.js dist/sql-asm-debug-memory-growth.js
 
 dist/sql-asm-debug.js: $(BITCODE_FILES) $(OUTPUT_WRAPPER_FILES) $(OUTPUT_API_FILES) $(EXPORTED_METHODS_JSON_FILES)
+	mkdir -p dist
 	$(EMCC) $(EMFLAGS) $(EMFLAGS_DEBUG) $(EMFLAGS_ASM) $(BITCODE_FILES) $(EMFLAGS_PRE_JS_FILES) -o $@
 	cat src/shell-pre.js $@ src/shell-post.js > out/sql-wrapped.js
 	mv out/sql-wrapped.js $@
 
 dist/sql-wasm-debug.js: $(BITCODE_FILES) $(OUTPUT_WRAPPER_FILES) $(OUTPUT_API_FILES) $(EXPORTED_METHODS_JSON_FILES)
+	mkdir -p dist
 	$(EMCC) $(EMFLAGS) $(EMFLAGS_DEBUG) $(EMFLAGS_WASM) $(BITCODE_FILES) $(EMFLAGS_PRE_JS_FILES) -o $@
 	cat src/shell-pre.js $@ src/shell-post.js > out/sql-wrapped.js
 	mv out/sql-wrapped.js $@
 
 dist/sql-asm-debug-memory-growth.js: $(BITCODE_FILES) $(OUTPUT_WRAPPER_FILES) $(OUTPUT_API_FILES) $(EXPORTED_METHODS_JSON_FILES)
+	mkdir -p dist
 	$(EMCC) $(EMFLAGS) $(EMFLAGS_DEBUG) $(EMFLAGS_ASM_MEMORY_GROWTH) $(BITCODE_FILES) $(EMFLAGS_PRE_JS_FILES) -o $@
 	cat src/shell-pre.js $@ src/shell-post.js > out/sql-wrapped.js
 	mv out/sql-wrapped.js $@
@@ -93,16 +96,19 @@ dist/sql-asm-debug-memory-growth.js: $(BITCODE_FILES) $(OUTPUT_WRAPPER_FILES) $(
 optimized: dist/sql-asm.js dist/sql-wasm.js dist/sql-asm-memory-growth.js
 
 dist/sql-asm.js: $(BITCODE_FILES) $(OUTPUT_WRAPPER_FILES) $(OUTPUT_API_FILES) $(EXPORTED_METHODS_JSON_FILES)
+	mkdir -p dist
 	$(EMCC) $(EMFLAGS) $(EMFLAGS_OPTIMIZED) $(EMFLAGS_ASM) $(BITCODE_FILES) $(EMFLAGS_PRE_JS_FILES) -o $@
 	cat src/shell-pre.js $@ src/shell-post.js > out/sql-wrapped.js
 	mv out/sql-wrapped.js $@
 
 dist/sql-wasm.js: $(BITCODE_FILES) $(OUTPUT_WRAPPER_FILES) $(OUTPUT_API_FILES) $(EXPORTED_METHODS_JSON_FILES)
+	mkdir -p dist
 	$(EMCC) $(EMFLAGS) $(EMFLAGS_OPTIMIZED) $(EMFLAGS_WASM) $(BITCODE_FILES) $(EMFLAGS_PRE_JS_FILES) -o $@
 	cat src/shell-pre.js $@ src/shell-post.js > out/sql-wrapped.js
 	mv out/sql-wrapped.js $@
 
 dist/sql-asm-memory-growth.js: $(BITCODE_FILES) $(OUTPUT_WRAPPER_FILES) $(OUTPUT_API_FILES) $(EXPORTED_METHODS_JSON_FILES)
+	mkdir -p dist
 	$(EMCC) $(EMFLAGS) $(EMFLAGS_OPTIMIZED) $(EMFLAGS_ASM_MEMORY_GROWTH) $(BITCODE_FILES) $(EMFLAGS_PRE_JS_FILES) -o $@
 	cat src/shell-pre.js $@ src/shell-post.js > out/sql-wrapped.js
 	mv out/sql-wrapped.js $@
