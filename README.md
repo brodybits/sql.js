@@ -4,6 +4,7 @@ custom build by [@brodybits (Christopher J. Brody)](https://github.com/brodybits
 
 - support FTS4, FTS5, R-Tree, and JSON1
 - some more OMIT build flags to omit some obsolete SQLite features
+- `dist/sql-asm-debug.js` now built with `-s ALLOW_MEMORY_GROWTH=1` to allow the allocated memory buffer to grow as needed
 - no `dist` JS or WASM artifacts are committed in this version of sql.js
 
 <!-- NOT INCLUDED in custom build:
