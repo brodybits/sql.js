@@ -3,6 +3,9 @@
 Custom build version with the following enhancement(s):
 - add some more OMIT build flags to `Makefile`
 - support FTS4, FTS5, R-Tree, and JSON1
+- add non-standard BASE64 function support
+  - from: https://github.com/brodybits/sqlite3-base64
+  - with public-domain libb64 encoding functions from: http://libb64.sourceforge.net/
 - quick updates for EU character support - feature from: https://github.com/brodybits/sqlite3-eu
 - `dist/sql-asm-debug.js` now built with `-s ALLOW_MEMORY_GROWTH=1` to allow the allocated memory buffer to grow as needed
 
