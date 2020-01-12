@@ -2,6 +2,7 @@
 
 custom build by [@brodybits (Christopher J. Brody)](https://github.com/brodybits) with some updates including:
 
+- some more OMIT build flags to omit some obsolete SQLite features
 - no `dist` JS or WASM artifacts are committed in this version of sql.js
 
 <!-- NOT INCLUDED in custom build:
