@@ -4,6 +4,7 @@ Custom build version with the following enhancement(s):
 - add some more OMIT build flags to `Makefile`
 - support FTS4, FTS5, R-Tree, and JSON1
 - quick updates for EU character support - feature from: https://github.com/brodybits/sqlite3-eu
+- `dist/sql-asm-debug.js` now built with `-s ALLOW_MEMORY_GROWTH=1` to allow the allocated memory buffer to grow as needed
 
 non-standard functions supported as proposed in: <https://github.com/kripken/sql.js/pull/320>
 
