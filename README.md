@@ -2,6 +2,7 @@
 
 Custom build version with the following enhancement(s):
 - add some more OMIT build flags to `Makefile`
+- support FTS4, FTS5, R-Tree, and JSON1
 - quick updates for EU character support - feature from: https://github.com/brodybits/sqlite3-eu
 
 non-standard functions supported as proposed in: <https://github.com/kripken/sql.js/pull/320>
