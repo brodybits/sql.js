@@ -1,6 +1,9 @@
 node_modules/
 *~
 
+# dist artifacts:
+dist/*
+
 # Intermediary files:
 out/
 sqlite-src/
