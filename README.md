@@ -1,8 +1,15 @@
 # SQLite compiled to JavaScript
+
+custom build by [@brodybits (Christopher J. Brody)](https://github.com/brodybits) with some updates including:
+
+- no `dist` JS or WASM artifacts are committed in this version of sql.js
+
+<!-- NOT INCLUDED in custom build:
 [![CI status](https://github.com/kripken/sql.js/workflows/CI/badge.svg)](https://github.com/kripken/sql.js/actions)
 [![CDNJS version](https://img.shields.io/cdnjs/v/sql.js.svg)](https://cdnjs.com/libraries/sql.js)
 
 For the impatients, try the demo here: http://kripken.github.io/sql.js/examples/GUI
+- -->
 
 *sql.js* is a port of [SQLite](http://sqlite.org/about.html) to Webassembly, by compiling the SQLite C code with [Emscripten](http://kripken.github.io/emscripten-site/docs/introducing_emscripten/about_emscripten.html). It uses a [virtual database file stored in memory](https://kripken.github.io/emscripten-site/docs/porting/files/file_systems_overview.html), and thus **doesn't persist the changes** made to the database. However, it allows you to **import** any existing sqlite file, and to **export** the created database as a [JavaScript typed array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays).
 
