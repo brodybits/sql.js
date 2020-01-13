@@ -6,6 +6,7 @@ custom build by [@brodybits (Christopher J. Brody)](https://github.com/brodybits
   - non-standard BASE64 function from:
     - https://github.com/brodybits/sqlite3-base64
     - with public-domain libb64 encoding functions from: http://libb64.sourceforge.net/
+  - quick updates for EU character support in UPPER and LOWER functions using: https://github.com/brodybits/sqlite3-eu
 - support FTS4, FTS5, R-Tree, and JSON1
 - some more OMIT build flags to omit some obsolete SQLite features
 - `dist/sql-asm-debug.js` now built with `-s ALLOW_MEMORY_GROWTH=1` to allow the allocated memory buffer to grow as needed
