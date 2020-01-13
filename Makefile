@@ -1,4 +1,4 @@
-# Note: Last built with version 1.38.30 of Emscripten
+# NOTE: This is a custom build, tested with a recent version of Emscripten.
 
 # TODO: Emit a file showing which version of emcc and SQLite was used to compile the emitted output.
 # TODO: Create a release on Github with these compiled assets rather than checking them in
