@@ -1,4 +1,5 @@
-exports.test = function(sql, assert) {
+// pending test:
+exports.xtest = function(sql, assert) {
   var db = new sql.Database();
   var res = db.exec("CREATE TABLE test (str_data, data);");
 

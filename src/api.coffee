@@ -243,8 +243,8 @@ class Database
         # open the database and register extension functions
         @handleError sqlite3_open @filename, apiTemp
         @db = getValue(apiTemp, 'i32')
-        # register built-in extension functions:
-        RegisterExtensionFunctions(@db)
+        # NOT ENABLED in this build - register built-in extension functions:
+        # RegisterExtensionFunctions(@db)
         # register any custom (non-standard) extension functions:
         custom_extensions(@db)
         @statements = {} # A list of all prepared statements of the database

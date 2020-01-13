@@ -10,6 +10,11 @@ SQLITE_AMALGAMATION = sqlite-amalgamation-3300100
 SQLITE_AMALGAMATION_ZIP_URL = https://www.sqlite.org/2019/sqlite-amalgamation-3300100.zip
 SQLITE_AMALGAMATION_ZIP_SHA1 = ff9b4e140fe0764bc7bc802facf5ac164443f517
 
+# NOTE: SQLite3 extension functions from `extension-functions.c` are
+# NOT enabled in this build since these extension functions are
+# not supported by existing Cordova SQLite storage/ext plugin versions.
+# FUTURE TODO: consider how to completely remove from this build.
+
 # Note that extension-functions.c hasn't been updated since 2010-02-06, so likely doesn't need to be updated
 EXTENSION_FUNCTIONS = extension-functions.c
 EXTENSION_FUNCTIONS_URL = https://www.sqlite.org/contrib/download/extension-functions.c?get=25
