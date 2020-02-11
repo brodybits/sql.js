@@ -66,7 +66,7 @@ EMFLAGS_OPTIMIZED= \
 EMFLAGS_DEBUG = \
 	-s INLINING_LIMIT=10 \
 	-s ASSERTIONS=1 \
-	-O1
+	-O0
 
 BITCODE_FILES = out/sqlite3.bc out/extension-functions.bc out/custom_extensions.bc
 
